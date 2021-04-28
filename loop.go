@@ -119,12 +119,12 @@ func inLoop(c *Channel, m *methods) error {
 		if err != nil {
 			return closeChannel(c, m, err)
 		}
+		fmt.Println(pkg)
 		msg, err := protocol.Decode(pkg)
 		if err != nil {
 			closeChannel(c, m, protocol.ErrorWrongPacket)
 			return err
 		}
-		fmt.Println(msg)
 		switch msg.Type {
 		case protocol.MessageTypeOpen:
 			if err := json.Unmarshal([]byte(msg.Source[1:]), &c.header); err != nil {
