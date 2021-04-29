@@ -8,31 +8,31 @@ const (
 	/**
 	Close connection and destroy all handle routines
 	*/
-	MessageTypeClose = iota
+	MessageTypeClose
 	/**
 	Ping request message
 	*/
-	MessageTypePing = iota
+	MessageTypePing
 	/**
 	Pong response message
 	*/
-	MessageTypePong = iota
+	MessageTypePong
 	/**
 	Empty message
 	*/
-	MessageTypeEmpty = iota
+	MessageTypeEmpty
 	/**
 	Emit request, no response
 	*/
-	MessageTypeEmit = iota
+	MessageTypeEmit
 	/**
 	Emit request, wait for response (ack)
 	*/
-	MessageTypeAckRequest = iota
+	MessageTypeAckRequest
 	/**
 	ack response
 	*/
-	MessageTypeAckResponse = iota
+	MessageTypeAckResponse
 )
 
 type Message struct {
@@ -42,4 +42,3 @@ type Message struct {
 	Args   string
 	Source string
 }
-
